@@ -11,17 +11,35 @@
 </head>
 
 <body ng-app='myApp'>
-
   <div class="container">
     <div class="row">
-      <h1>Giphy API & Angular</h1>
-      <div ng-controller='HttpController as hc' ng-init='hc.startUpFunction()'>
+
+      <div ng-controller='HttpController as hc'>
+        <div class="panel panel-primary" class="col-sm-6 col-sm-offset-3">
+          <h1>Giphy API & Angular</h1>
+          <hr>
+          <form>
+            <div class="form-group">
+              <label for="exampleInput">Search Giphy</label>
+              <input type="text" class="form-control" id="search" placeholder="Search for a Giphy..." ng-model="hc.itemsearch">
+            </div>
+            <button type="submit" class="btn btn-default" ng-click='hc.searchGet()'>Submit</button>
+            <button type="submit" class="btn btn-default" ng-click='hc.searchRandom()'>Get a Random Search</button>
+          </form>
+        </div>
+
+        <div id="displayArea" ng-init='hc.startUpFunction()' class="col-sm-10 col-sm-offset-1">
+          <div class="col-sm-4 col-xs-12" ng-repeat="entry in hc.data">
+            <div class="card">
+              <img class="img-responsive" ng-src="{{entry.images.downsized.url}}" alt="">
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
     </div>
-  </div>
-
-
-
 </body>
 
 </html>
