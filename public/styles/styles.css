@@ -6,6 +6,13 @@
 }
 
 .card {
+  background: background: lightgrey;
+  ;
+  margin: 15px 0;
+  padding: 15px;
+}
+
+.card2 {
   background: #f5f6f7;
   margin: 15px 0;
   padding: 15px;
@@ -14,4 +21,18 @@
 img {
   vertical-align: middle;
   width: 100%;
+}
+
+.jumbotron {
+  background: lightgrey;
+  text-shadow: 1px 0 0 #000;
+  color: #337ab7;
+}
+
+.btn {
+  background: lightgrey;
+}
+
+.h3title {
+  text-transform: uppercase;
 }
